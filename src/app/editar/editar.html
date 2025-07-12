@@ -1,0 +1,25 @@
+<!-- Botón para abrir el popup -->
+<button class="btn btn-primary" (click)="editarFila()">Editar</button>
+
+<!-- Popup modal -->
+<div id="popupEditar" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);">
+    <div style="background:#fff; margin:10% auto; padding:20px; width:300px; position:relative;">
+        <h4>Editar datos</h4>
+        <form>
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="address">Direccion:</label>
+                <input type="email" id="address" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefono:</label>
+                <input type="email" id="phone" class="form-control">
+            </div>
+            <button type="button" class="btn btn-success" (click)="editarFila()" >Actualizar</button>
+            <button type="button" class="btn btn-secondary" onclick="document.getElementById('popupEditar').style.display='none'">Cancelar</button>
+        </form>
+    </div>
+</div>

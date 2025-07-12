@@ -1,0 +1,31 @@
+<br>
+<br>
+
+<!-- <form #forumForm="ngForm" (ngSubmit)="onSubmit(forum)">
+    <label for="title">
+        Title: <input type="text" name="title" [(ngModel)] = "forum.name" required placeholder="Ingrese el titulo">
+    </label>
+    <label for="comment">
+        Comentario: <input type="text" name="comment" [(ngModel)] = "forum.phone" required placeholder="Ingrese el comentario">
+    </label>
+
+    <button type="submit">Save</button>
+
+</form> -->
+<table border="1" class="forum-table" >
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Dirección</th>
+            <th>Teléfono</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let forum of forumsAux">
+            <td>{{ forum.name }}</td>
+            <td>{{ forum.address }}</td>
+            <td>{{ forum.phone }}</td>
+        </tr>
+    </tbody>
+</table>
+<br>

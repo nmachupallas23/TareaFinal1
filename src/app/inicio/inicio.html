@@ -1,0 +1,32 @@
+<div class="card">
+
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+
+
+            @for (item of forums; track $index) {
+            <tbody>
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.address}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>                        
+                        <app-editar [forums]="forums" [forumId]="item.id"></app-editar>
+                        
+                    </td>
+                </tr>
+            </tbody>
+            }
+        </table>
+    </div>
+</div>

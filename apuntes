@@ -1,0 +1,72 @@
+##Nombres de Branch main  -  multiple##
+##Descargar Branch##
+
+git clone <URL-del-repositorio>
+cd <nombre-del-repositorio>
+git checkout <nombre-del-branch>
+
+git clone https://github.com/nmorenoandrade/Todo-List.git
+cd Todo-List
+git checkout main
+
+
+##Actualizar el código del brach##
+git checkout multiple
+
+# Actualizar tu rama local con los últimos cambios de la rama principal remota
+git fetch origin
+git checkout <nombre-de-tu-rama>
+git merge origin/main
+# o si prefieres rebase:
+git rebase origin/main
+
+# Si aparecen conflictos, resuélvelos y luego:
+git add .
+git commit -m "Resuelve conflictos de merge/rebase con main"
+
+# Subir tus cambios a la rama remota
+git push origin <nombre-de-tu-rama>
+
+# Si tu repositorio no está inicializado:
+git init
+git add .
+git commit -m "Primer commit"
+git branch -M main
+git remote add origin https://github.com/nmachupallas23/TareaFinal1.git
+git push -u origin main
+
+echo "# Todo-List" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/nmachupallas/Todo-List.git
+git push -u origin main
+
+
+theomoren148@gmail.com 
+nMMayo.2025
+thmoreno10
+
+#################
+netstat -ano | findstr 4200
+taskkill /F /PID 34184
+
+#crear proyecto
+ng new consumows
+#crear dos componentes
+ng g c inicio
+ng g c contacto
+#crear servicio
+ng g s foro
+#crear entorno
+ng g environments
+
+10.9.2
+
+Angular CLI: 20.0.5
+Node: 22.17.0
+Package Manager: npm 10.9.2
+OS: win32 x64
+
+https://github.com/dlandivar/react1_curso.git
