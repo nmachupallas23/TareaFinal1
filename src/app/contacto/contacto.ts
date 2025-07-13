@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { Foro } from '../foro';
-import { forumPost } from '../app';
+import { usuarioPost } from '../app';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
 })
 export class Contacto {
    constructor(private foro: Foro) {}
-  public forums: forumPost[] = [];
+  public forums: usuarioPost[] = [];
   cargarUsuarios() {
         this.foro.getForums().subscribe(data => {
       this.forums = data;

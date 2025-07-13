@@ -2,24 +2,30 @@
 <button class="btn btn-primary" (click)="editarFila()">Editar</button>
 
 <!-- Popup modal -->
-<div id="popupEditar" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);">
-    <div style="background:#fff; margin:10% auto; padding:20px; width:300px; position:relative;">
+<div *ngIf="showPopup" class="popup-overlay">
+    <div class="popup-content">
         <h4>Editar datos</h4>
-        <form>
-            <div class="form-group">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" class="form-control">
+        <form *ngIf="usuarioEditable.length > 0">
+            <div *ngFor="let user of usuarioEditable; let i = index">              
+                <label>Nombre:</label>
+                <input type="text" class="form-control" 
+                       [(ngModel)]="user.name" 
+                       [name]="'name' + i"/>              
+
+                <label>Dirección:</label>
+                <input type="text" class="form-control" 
+                       [(ngModel)]="user.address" 
+                       [name]="'address' + i"/>
+                <label>Teléfono:</label>
+                <input type="text" class="form-control" 
+                       [(ngModel)]="user.phone" 
+                       [name]="'phone' + i"/>                             
             </div>
-            <div class="form-group">
-                <label for="address">Direccion:</label>
-                <input type="email" id="address" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="phone">Telefono:</label>
-                <input type="email" id="phone" class="form-control">
-            </div>
-            <button type="button" class="btn btn-success" (click)="editarFila()" >Actualizar</button>
-            <button type="button" class="btn btn-secondary" onclick="document.getElementById('popupEditar').style.display='none'">Cancelar</button>
+
+            <button type="button" class="btn btn-success" 
+                    (click)="actualizarUsuario()">Actualizar</button>
+            <button type="button" class="btn btn-secondary" 
+                    (click)="cancelarEdicion()">Cancelar</button>
         </form>
     </div>
 </div>

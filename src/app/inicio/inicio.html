@@ -13,7 +13,7 @@
             </thead>
 
 
-            @for (item of forums; track $index) {
+            @for (item of usuarios; track $index) {
             <tbody>
                 <tr>
                     <td>{{item.id}}</td>
@@ -21,7 +21,7 @@
                     <td>{{item.address}}</td>
                     <td>{{item.phone}}</td>
                     <td>                        
-                        <app-editar [forums]="forums" [forumId]="item.id"></app-editar>
+                        <app-editar [usuarios]="usuarios" [usuarioId]="item.id"></app-editar>
                         
                     </td>
                 </tr>

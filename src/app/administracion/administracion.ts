@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Injectable, OnInit, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { forumPost } from '../app';
+import { usuarioPost } from '../app';
 import { Foro } from '../foro';
 import { Contacto } from '../contacto/contacto';
 
@@ -17,7 +17,7 @@ import { Contacto } from '../contacto/contacto';
 })
 export class Administracion {
   
-forumsAux: forumPost[] = [];
+forumsAux: usuarioPost[] = [];
 
   constructor(private foro: Foro, private contacto1: Contacto) {}
 
