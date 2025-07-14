@@ -1,0 +1,28 @@
+<div class="boton-derecha">
+  <button class="btn-crear" (click)="mostrar()">
+    <i class="fas fa-plus-circle"></i> Crear
+  </button>
+</div>
+
+
+<!-- Popup modal -->
+<div *ngIf="showPopupCrear" class="popup-overlay">
+    <div class="popup-content">
+        <h4>Crear nuevo Registro</h4>
+
+ <form [formGroup]="datosForm" (ngSubmit)="enviar()">
+            
+                <label>Nombre:</label>
+                <input type="text" class="form-control" formControlName="name" required />
+                <label>Dirección:</label>
+                <input type="text" class="form-control" formControlName="address" required />
+                <label>Teléfono:</label>
+                <input type="text" class="form-control" formControlName="phone" required />            
+
+            <button type="submit"  [disabled]="datosForm.invalid">Enviar</button>
+            <button type="button"  (click)="cancelar()">Cancelar</button>
+        </form>
+
+
+    </div>
+</div>

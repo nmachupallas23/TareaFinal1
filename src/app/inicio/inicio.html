@@ -1,6 +1,8 @@
 <div class="card">
 
     <div>
+        <button class="btn btn-primary" (click)="cargarUsuariosIniciales()">Cargar Datos de API</button>
+        <app-crear (usuarioAgregado)="cargaListaActualizadaPorCreacion($event)"></app-crear>
         <table class="table">
             <thead>
                 <tr>
@@ -22,7 +24,8 @@
                     <td>{{item.phone}}</td>
                     <td>                        
                         <app-editar [usuarios]="usuarios" [usuarioId]="item.id"></app-editar>
-                        
+                        <app-eliminar [usuarios]="usuarios" [usuarioId]="item.id"
+                            (listaUsuariosEliminados)="cargaListaActualizadaPorEliminacion($event)"></app-eliminar>                        
                     </td>
                 </tr>
             </tbody>

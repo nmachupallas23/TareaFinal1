@@ -6,26 +6,18 @@
     <div class="popup-content">
         <h4>Editar datos</h4>
         <form *ngIf="usuarioEditable.length > 0">
-            <div *ngFor="let user of usuarioEditable; let i = index">              
+            <div *ngFor="let user of usuarioEditable; let i = index">
                 <label>Nombre:</label>
-                <input type="text" class="form-control" 
-                       [(ngModel)]="user.name" 
-                       [name]="'name' + i"/>              
+                <input type="text" class="form-control" [(ngModel)]="user.name" [name]="'name' + i" />
 
                 <label>Dirección:</label>
-                <input type="text" class="form-control" 
-                       [(ngModel)]="user.address" 
-                       [name]="'address' + i"/>
+                <input type="text" class="form-control" [(ngModel)]="user.address" [name]="'address' + i" />
                 <label>Teléfono:</label>
-                <input type="text" class="form-control" 
-                       [(ngModel)]="user.phone" 
-                       [name]="'phone' + i"/>                             
+                <input type="text" class="form-control" [(ngModel)]="user.phone" [name]="'phone' + i" />
             </div>
 
-            <button type="button" class="btn btn-success" 
-                    (click)="actualizarUsuario()">Actualizar</button>
-            <button type="button" class="btn btn-secondary" 
-                    (click)="cancelarEdicion()">Cancelar</button>
+            <button type="button" class="btn btn-success" (click)="actualizarUsuario()">Actualizar</button>
+            <button type="button" class="btn btn-secondary" (click)="cancelarEdicion()">Cancelar</button>
         </form>
     </div>
 </div>

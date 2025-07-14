@@ -32,9 +32,51 @@ export class Foro {
   }
 
   addForum(forum: usuarioPost): Observable<usuarioPost> {
-    return this.http.post<usuarioPost>(`${this.apiUrl}`, forum, {
+    return this.http.post<usuarioPost>(`${this.apiUrlCreate}`, forum, {
       headers: this.jsonHeaders
-    });
+    }).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Error del API:', error);
+        let errorMessage = 'Error al crear el usuario';
+
+        if (error.error instanceof ErrorEvent) {
+          // Error del lado del cliente
+          errorMessage = `Error: ${error.error.message}`;
+        } else {
+          // Error del backend
+          errorMessage = `Código: ${error.status}\nMensaje: ${error.message}`;
+          if (error.error && error.error.message) {
+            errorMessage += `\nDetalles: ${error.error.message}`;
+          }
+        }
+
+        return throwError(() => new Error(errorMessage));
+      })
+    );
+  }
+
+  deleteUsuarios(user: usuarioPost) : Observable<usuarioPost>{
+    return this.http.delete<usuarioPost>(`${this.apiUrl}/delete/${user.id}`, {
+    headers: this.jsonHeaders
+    }).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error('Error del API:', error);
+        let errorMessage = 'Error al crear el usuario';
+
+        if (error.error instanceof ErrorEvent) {
+          // Error del lado del cliente
+          errorMessage = `Error: ${error.error.message}`;
+        } else {
+          // Error del backend
+          errorMessage = `Código: ${error.status}\nMensaje: ${error.message}`;
+          if (error.error && error.error.message) {
+            errorMessage += `\nDetalles: ${error.error.message}`;
+          }
+        }
+
+        return throwError(() => new Error(errorMessage));
+      })
+    );
   }
 
 

@@ -7,7 +7,7 @@ export const routes: Routes = [
     {
         path: '',
         component:Inicio,
-        title: 'Inicio'
+        title: 'Trabajo Final'
     },
     {
         path: 'contacto',
