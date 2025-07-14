@@ -31,6 +31,7 @@ listaUsuarios: usuarioPost[] = [];
 @Output()usuarios: usuarioPost[] = [];
 enviar() {
   if (this.datosForm.valid) {
+    this.listaUsuarios = []; // Limpiar la lista antes de agregar un nuevo usuario
     const { name, address,phone } = this.datosForm.value;
     this.listaUsuarios.push({
       name: name ?? '',

@@ -10,7 +10,7 @@
     <div class="popup-content">
         <h4>Crear nuevo Registro</h4>
 
- <form [formGroup]="datosForm" (ngSubmit)="enviar()">
+ <form [formGroup]="datosForm" >
             
                 <label>Nombre:</label>
                 <input type="text" class="form-control" formControlName="name" required />
@@ -19,7 +19,7 @@
                 <label>Teléfono:</label>
                 <input type="text" class="form-control" formControlName="phone" required />            
 
-            <button type="submit"  [disabled]="datosForm.invalid">Enviar</button>
+            <button type="submit"  (click)="enviar()">Enviar</button>
             <button type="button"  (click)="cancelar()">Cancelar</button>
         </form>
 
