@@ -1,4 +1,4 @@
-import { Component, Input, } from '@angular/core';
+import { Component, EventEmitter, Input, Output, } from '@angular/core';
 import { usuarioPost } from '../app';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,6 +13,7 @@ import { Foro } from '../foro';
 export class Editar {
   @Input() usuarios: usuarioPost[] = [];
   @Input() usuarioId!: number;
+  @Output() listaUsuarios = new EventEmitter<usuarioPost[]>();
   constructor(private forumService: Foro) { }
   showPopup = false;
   usuarioEditable: usuarioPost[] = []; // Array para múltiples elementos
@@ -68,5 +69,6 @@ export class Editar {
 
   cancelarEdicion() {
     this.showPopup = false;
+     this.listaUsuarios.emit(this.usuarios); // Emitir la lista actualizada
   }
 }
