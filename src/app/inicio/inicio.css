@@ -1,3 +1,9 @@
+.boton-derecha {
+  display: flex;
+  justify-content: flex-start; /* Alinea a la derecha */
+  margin-bottom: 0px; /* Espacio opcional */
+  padding: 0px 0px 0px 20px; /* Ajusta el padding para que el icono no se corte */
+}
 table {
     width: 100%;
     border-collapse: collapse;

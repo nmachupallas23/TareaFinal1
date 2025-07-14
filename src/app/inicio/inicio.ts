@@ -39,6 +39,13 @@ ngOnInit() {
   //   console.log('Forums loaded:', data);
   // });
 }
+
+cargarDatosApi() {
+    this.forumService.getForums().subscribe((data) => {
+     this.usuarios = data;
+     console.log('Forums loaded:', data);
+   });   
+  }
   cargarUsuariosIniciales() {
     this.forumService.getForums().subscribe((data) => {
      this.usuarios = data;
